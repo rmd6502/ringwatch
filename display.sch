@@ -454,4 +454,10 @@ F 3 "~" H 2550 2300 50  0001 C CNN
 	1    2550 2300
 	1    0    0    -1  
 $EndComp
+Text Label 6000 2950 0    50   ~ 0
+SWDIO
+Text Label 6000 3050 0    50   ~ 0
+SWDCK
+Text Label 6000 3150 0    50   ~ 0
+tRST
 $EndSCHEMATC
