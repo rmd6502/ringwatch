@@ -518,6 +518,11 @@
       (net 22 GND))
     (pad 1 smd rect (at -4.7 -3.8) (size 1.6 0.8) (layers F.Cu F.Paste F.Mask)
       (net 22 GND))
+    (model "/Users/rmd/Documents/MDBT42Q_MDBT42Q-P Footprint_Design Guide-20171016/2D & 3D Drawing/MDBT42Q/MDBT42Q 3D/mdbt42q.stp"
+      (at (xyz 0 0 0))
+      (scale (xyz 1 1 1))
+      (rotate (xyz -90 0 0))
+    )
   )
 
   (module Package_DIP:DIP-12_W7.62mm_SMDSocket_SmallPads (layer B.Cu) (tedit 5A02E8C5) (tstamp 5BD9A33A)
@@ -582,8 +587,8 @@
       (net 11 /K4))
     (pad 12 smd rect (at 3.81 6.35 180) (size 1.6 1.6) (layers B.Cu B.Paste B.Mask)
       (net 12 /Aa))
-    (model ${KISYS3DMOD}/Package_DIP.3dshapes/DIP-12_W7.62mm_SMDSocket.wrl
-      (at (xyz 0 0 0))
+    (model ${KISYS3DMOD}/Package_DIP.3dshapes/DIP-12_W7.62mm_Socket.step
+      (offset (xyz -3.9 6.4 2))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
     )
@@ -629,7 +634,7 @@
       (net 21 +3V3))
     (pad 2 smd rect (at 3.975 2.25) (size 1.55 1.3) (layers F.Cu F.Paste F.Mask)
       (net 21 +3V3))
-    (model ${KISYS3DMOD}/Button_Switch_SMD.3dshapes/SW_SPST_B3S-1000.wrl
+    (model ${KISYS3DMOD}/Button_Switch_SMD.3dshapes/SW_SPST_TL3342.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
