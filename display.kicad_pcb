@@ -587,10 +587,10 @@
       (net 11 /K4))
     (pad 12 smd rect (at 3.81 6.35 180) (size 1.6 1.6) (layers B.Cu B.Paste B.Mask)
       (net 12 /Aa))
-    (model ${KISYS3DMOD}/Package_DIP.3dshapes/DIP-12_W7.62mm_Socket.step
-      (offset (xyz -3.9 6.4 2))
+    (model "${KIPRJMOD}/qdsp v3.step"
+      (offset (xyz -3.8 7.5 1))
       (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
+      (rotate (xyz -90 0 90))
     )
   )
 
