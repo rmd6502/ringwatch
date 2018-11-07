@@ -21,7 +21,7 @@ function getClockDate() {
 function getClockTime() {
   const d = new Date();
   count = d.getHours() * 100 + d.getMinutes();
-  pattern = ("   " + count.toString(10)).slice(-4);
+  pattern = ("    " + count.toString(10)).slice(-4);
   const s = d.getSeconds();
   decimal = 0x80 * (s & 1);
 }
@@ -29,9 +29,8 @@ function getClockTime() {
 function getClockSeconds() {
   const d = new Date();
   count = d.getSeconds();
-  pattern = ("   " + count.toString(10)).slice(-4);
-  const s = d.getSeconds();
-  decimal = 0x80 * (s & 1);
+  pattern = "  " + ("00" + count.toString(10)).slice(-2);
+  decimal = 0x80 * (count & 1);
 }
 
 const modes = [getClockTime, getClockDate, getClockSeconds];
@@ -44,7 +43,7 @@ function incMode() {
 function onInit() {
   setTimeout(update, 0);
   getClockTime();
-  setInterval(() => modes[currentMode](), 1000);
+  setInterval(() => modes[currentMode](), 500);
   setWatch(incMode, D0, {
     repeat: true, edge: 'rising', debounce: 2
   });
