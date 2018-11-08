@@ -9,6 +9,8 @@ var decimal = 0;
 var k = 3;
 var pattern = "   0";
 var currentMode = 0;
+var updateInterval = null;
+var blankInterval = null;
 
 function getClockDate() {
   const d = new Date();
@@ -36,17 +38,32 @@ function getClockSeconds() {
 const modes = [getClockTime, getClockDate, getClockSeconds];
 
 function incMode() {
-  currentMode = (currentMode + 1) % modes.length;
+  if (updateInterval !== null) {
+    clearTimeout(blankInterval);
+    currentMode = (currentMode + 1) % modes.length;
+  } else {
+    currentMode = 0;
+    updateInterval = setInterval(() => modes[currentMode](), 500);
+    setTimeout(update, 0);
+  }
   modes[currentMode]();
+  blankInterval = setTimeout(doBlank, 10000);
 }
 
 function onInit() {
   setTimeout(update, 0);
   getClockTime();
-  setInterval(() => modes[currentMode](), 500);
+  updateInterval = setInterval(() => modes[currentMode](), 500);
   setWatch(incMode, D0, {
     repeat: true, edge: 'rising', debounce: 2
   });
+  blankInterval = setTimeout(doBlank, 10000);
+}
+
+function doBlank() {
+  ui = updateInterval;
+  updateInterval = null;
+  clearInterval(ui);
 }
 
 function update() {
@@ -62,5 +79,9 @@ function update() {
     if (d > 9) d -= ae;
     digitalWrite(anodes, patterns[d] + (decimal * (k == 1)));
   }
-  setTimeout(update, 1);
+  if (updateInterval !== null) {
+    setTimeout(update, 1);
+  } else {
+    digitalWrite(anodes, 0);
+  }
 }
