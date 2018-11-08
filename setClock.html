@@ -3,7 +3,7 @@
  </head>
  <body>
   <script src="https://www.puck-js.com/puck.js"></script>
-  <button onclick="Puck.write('setTime(new Date().getTime()/1000);\n');">Set clock</button><br />
+  <button onclick="Puck.write('setTime(' + (new Date().getTime()/1000).toString() + ');\n');">Set clock</button><br />
   <button onclick="Puck.write('incMode();\n');">Watch button</button>
  </body>
 </html>
