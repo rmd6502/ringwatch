@@ -1,0 +1,170 @@
+EESchema Schematic File Version 4
+LIBS:display-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 2
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L satnogs:AS5601 U2
+U 1 1 5BF6CCD1
+P 2750 2300
+F 0 "U2" H 2750 2765 50  0000 C CNN
+F 1 "AS5601" H 2750 2674 50  0000 C CNN
+F 2 "Package_SO:SOIC-8-1EP_3.9x4.9mm_P1.27mm_EP2.35x2.35mm" H 2750 2300 60  0001 C CNN
+F 3 "" H 2750 2300 60  0000 C CNN
+	1    2750 2300
+	1    0    0    -1  
+$EndComp
+Text HLabel 4500 2400 2    50   BiDi ~ 0
+SDA
+Text HLabel 4500 2200 2    50   Input ~ 0
+SCL
+Wire Wire Line
+	4500 2400 4050 2400
+Wire Wire Line
+	4500 2200 3900 2200
+$Comp
+L Timer_RTC:DS3231MZ U3
+U 1 1 5BF6CEFE
+P 2800 3300
+F 0 "U3" H 2800 2722 50  0000 C CNN
+F 1 "DS3231MZ" H 2800 2813 50  0000 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 2800 2800 50  0001 C CNN
+F 3 "http://datasheets.maximintegrated.com/en/ds/DS3231M.pdf" H 2800 2700 50  0001 C CNN
+	1    2800 3300
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3300 3400 3700 3400
+Wire Wire Line
+	3700 3400 3700 2400
+Connection ~ 3700 2400
+Wire Wire Line
+	3700 2400 3150 2400
+Wire Wire Line
+	3300 3500 3900 3500
+Wire Wire Line
+	3900 3500 3900 2200
+Connection ~ 3900 2200
+Wire Wire Line
+	3900 2200 3650 2200
+Text GLabel 1950 2200 0    50   Input ~ 0
++3.3V
+Text GLabel 1900 2850 0    50   Input ~ 0
+GND
+Wire Wire Line
+	1950 2200 2050 2200
+Wire Wire Line
+	1900 2850 2250 2850
+Wire Wire Line
+	2250 2850 2250 2500
+Wire Wire Line
+	2250 2500 2350 2500
+Wire Wire Line
+	2250 2850 2800 2850
+Wire Wire Line
+	2800 2850 2800 2900
+Connection ~ 2250 2850
+Wire Wire Line
+	2050 2200 2050 3850
+Wire Wire Line
+	2050 3850 2800 3850
+Wire Wire Line
+	2800 3850 2800 3700
+Connection ~ 2050 2200
+Wire Wire Line
+	2050 2200 2350 2200
+$Comp
+L Device:C C2
+U 1 1 5BF7A008
+P 2450 1450
+F 0 "C2" H 2565 1496 50  0000 L CNN
+F 1 ".1u" H 2565 1405 50  0000 L CNN
+F 2 "" H 2488 1300 50  0001 C CNN
+F 3 "~" H 2450 1450 50  0001 C CNN
+	1    2450 1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C3
+U 1 1 5BF7A087
+P 2900 1450
+F 0 "C3" H 3015 1496 50  0000 L CNN
+F 1 ".1u" H 3015 1405 50  0000 L CNN
+F 2 "" H 2938 1300 50  0001 C CNN
+F 3 "~" H 2900 1450 50  0001 C CNN
+	1    2900 1450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2050 2200 2050 1150
+Wire Wire Line
+	2050 1150 2450 1150
+Wire Wire Line
+	2900 1150 2900 1300
+Wire Wire Line
+	2450 1300 2450 1150
+Connection ~ 2450 1150
+Wire Wire Line
+	2450 1150 2900 1150
+Wire Wire Line
+	2900 1600 2450 1600
+Wire Wire Line
+	2250 1600 2250 2500
+Connection ~ 2450 1600
+Wire Wire Line
+	2450 1600 2250 1600
+Connection ~ 2250 2500
+$Comp
+L Device:R R?
+U 1 1 5BF7A98E
+P 3650 1800
+F 0 "R?" H 3720 1846 50  0000 L CNN
+F 1 "4.7k" H 3720 1755 50  0000 L CNN
+F 2 "" V 3580 1800 50  0001 C CNN
+F 3 "~" H 3650 1800 50  0001 C CNN
+	1    3650 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5BF7A9E6
+P 4050 1800
+F 0 "R?" H 4120 1846 50  0000 L CNN
+F 1 "4.7k" H 4120 1755 50  0000 L CNN
+F 2 "" V 3980 1800 50  0001 C CNN
+F 3 "~" H 4050 1800 50  0001 C CNN
+	1    4050 1800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3650 1950 3650 2200
+Connection ~ 3650 2200
+Wire Wire Line
+	3650 2200 3150 2200
+Wire Wire Line
+	4050 1950 4050 2400
+Connection ~ 4050 2400
+Wire Wire Line
+	4050 2400 3700 2400
+Wire Wire Line
+	4050 1650 4050 1150
+Wire Wire Line
+	4050 1150 3650 1150
+Connection ~ 2900 1150
+Wire Wire Line
+	3650 1650 3650 1150
+Connection ~ 3650 1150
+Wire Wire Line
+	3650 1150 2900 1150
+$EndSCHEMATC

@@ -1,8 +1,12 @@
 const cathodes = [D20,D28,D17,D15];
 const anodes = [D26,D27,D18,D30,D19,D29,D31,D16].reverse();
-const patterns = [63,6,91,79,102,109,125,7,127,111,95,124,88,94,121,113];
-const zero = '0'.charCodeAt(0);
-const ae = 'a'.charCodeAt(0) - zero - 10;
+const patterns = {
+    '0': 63,  '1': 6,  '2': 91, '3': 79,
+    '4': 102, '5': 109,'6': 125,'7': 7,
+    '8': 127, '9': 111,'a': 95, 'b': 124,
+    'c': 88,  'd': 94, 'e': 121,'f': 113,
+    'u': 62,  '-': 64
+};
 
 var count = 0;
 var decimal = 0;
@@ -72,12 +76,11 @@ function update() {
   if (k >= cathodes.length) {
     k = 0;
   }
-  var ch = pattern[k];
-  if ((ch >= '0' && ch <= '9') || (ch >= 'a' && ch <= 'f')) {
+  var ch = pattern[k].toLowerCase();
+  var pattern_value = patterns[ch];
+  if (pattern_value !== undefined) {
     digitalWrite(cathodes[k], 0);
-    var d = ch.charCodeAt(0) - zero;
-    if (d > 9) d -= ae;
-    digitalWrite(anodes, patterns[d] + (decimal * (k == 1)));
+    digitalWrite(anodes, pattern_value);
   }
   if (updateInterval !== null) {
     setTimeout(update, 1);

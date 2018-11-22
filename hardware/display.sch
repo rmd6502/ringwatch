@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 1
+Sheet 1 2
 Title "QDSP-6064 Espruino Clock"
 Date "2018-10-12"
 Rev "0.2"
@@ -396,11 +396,11 @@ F 3 "" H 2300 1950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2300 1950 2300 2150
+	2300 1950 2300 2000
 Wire Wire Line
-	2300 2250 2100 2250
+	2300 2250 2150 2250
 Wire Wire Line
-	2100 2350 2300 2350
+	2100 2350 2150 2350
 Wire Wire Line
 	2300 2350 2300 2450
 $Comp
@@ -437,8 +437,6 @@ Wire Wire Line
 	2550 2450 2300 2450
 Connection ~ 2300 2450
 Wire Wire Line
-	2300 2450 2300 2550
-Wire Wire Line
 	2550 2150 2300 2150
 Connection ~ 2300 2150
 Wire Wire Line
@@ -460,4 +458,58 @@ Text Label 6000 3050 0    50   ~ 0
 SWDCK
 Text Label 6000 3150 0    50   ~ 0
 tRST
+Text HLabel 2000 1850 0    50   Input ~ 0
++3.3V
+Text HLabel 1950 2600 0    50   Input ~ 0
+GND
+Wire Wire Line
+	1950 2600 2150 2600
+Wire Wire Line
+	2150 2600 2150 2350
+Connection ~ 2150 2350
+Wire Wire Line
+	2150 2350 2300 2350
+Wire Wire Line
+	2000 1850 2150 1850
+Wire Wire Line
+	2150 1850 2150 2250
+Connection ~ 2150 2250
+Wire Wire Line
+	2150 2250 2100 2250
+$Sheet
+S 6850 4500 1500 1100
+U 5BF6CBB9
+F0 "i2c_subsystem" 50
+F1 "i2c_subsystem.sch" 50
+F2 "SDA" B L 6850 4700 50 
+F3 "SCL" I L 6850 4900 50 
+$EndSheet
+Wire Wire Line
+	6650 4050 6650 4700
+Wire Wire Line
+	6650 4700 6850 4700
+Wire Wire Line
+	5400 4050 6650 4050
+Wire Wire Line
+	6600 4150 6600 4900
+Wire Wire Line
+	6600 4900 6850 4900
+Wire Wire Line
+	5400 4150 6600 4150
+Text GLabel 2550 2000 2    50   Input ~ 0
++3.3V
+Text GLabel 2550 2550 2    50   Input ~ 0
+GND
+Wire Wire Line
+	2550 2550 2300 2550
+Connection ~ 2300 2550
+Wire Wire Line
+	2550 2000 2300 2000
+Connection ~ 2300 2000
+Wire Wire Line
+	2300 2000 2300 2150
+Wire Wire Line
+	2300 2500 2300 2550
+Wire Wire Line
+	2300 2450 2300 2550
 $EndSCHEMATC
